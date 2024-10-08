@@ -91,13 +91,3 @@ avg_angles %>%
       facet_wrap(~playing_level, ncol = 4) +
       geom_smooth() +
       theme(legend.position = "none")
-
-# now lets do k means using the path of the elbow angle
-
-# first step is to get just elbow angle and then do a pivot_wider
-wide_avg_elbow <- avg_angles %>%
-      select(-mean_pronation_suppination, -mean_shoulder_add_abd) %>%
-      pivot_wider(
-            names_from = event,
-            values_from = mean_elbow_angle
-      )
