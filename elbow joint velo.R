@@ -2,8 +2,6 @@ library(tidyverse)
 
 joint_velos <- read_csv("openbiomechanics/baseball_pitching/data/full_sig/joint_velos.csv")
 
-# turns out moments of interest were already joined in the tables you dumbass
-
 joint_velos_moments <- joint_velos %>%
       mutate(
             event = case_when(
